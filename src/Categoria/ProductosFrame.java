@@ -301,10 +301,7 @@ public class ProductosFrame extends javax.swing.JFrame {
 
     private void jComboBoxRubroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRubroActionPerformed
         // TODO add your handling code here:    
-          if (jComboBoxRubro.getSelectedIndex()<0 && jComboBoxRubro.getSelectedIndex()>3) {
-                    JOptionPane.showMessageDialog(null, "Por favor, seleccione un rubro válido.", "Error", JOptionPane.ERROR_MESSAGE);
-                    jComboBoxRubro.requestFocusInWindow();
-                }
+       
     }//GEN-LAST:event_jComboBoxRubroActionPerformed
 
     private void jButtonLupaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLupaActionPerformed
