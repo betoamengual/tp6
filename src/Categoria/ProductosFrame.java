@@ -273,6 +273,11 @@ public class ProductosFrame extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "No debe haber campos en blanco");
                 return;
             }
+        
+        if (rubro == null) {
+        JOptionPane.showMessageDialog(this, "Debe elegir un rubro");
+        return;}
+        
         boolean resultado= MenuPrincipal.productoAgg.add(productos);
         if(resultado){
             JOptionPane.showMessageDialog(this, "Producto Agregado con éxito");
