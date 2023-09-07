@@ -272,25 +272,25 @@ public class ProductosFrame extends javax.swing.JFrame {
             ProductosData productos = new ProductosData(codigo, descripcion, precio,rubro,stock);
             
         if(descripcion.isEmpty()){
-                JOptionPane.showMessageDialog(this, "No debe haber campos en blanco");
+                JOptionPane.showMessageDialog(this, "No debe haber campos en vacios.", "Opss", JOptionPane.INFORMATION_MESSAGE);
                 return;
             }
         
         if (rubro == null) {
-        JOptionPane.showMessageDialog(this, "Debe elegir un rubro");
+        JOptionPane.showMessageDialog(this, "Debe elegir un rubro.");
         return;}
         
         boolean resultado= MenuPrincipal.productoAgg.add(productos);
         if(resultado){
-            JOptionPane.showMessageDialog(this, "Producto Agregado con éxito");
+            JOptionPane.showMessageDialog(this, "Producto Agregado con éxito.", "Producto agregado", JOptionPane.INFORMATION_MESSAGE);
             }else {
             
-                JOptionPane.showMessageDialog(this, "Ya existe un producto con ese código");
+                JOptionPane.showMessageDialog(this, "Ya existe un producto con ese código", "Opss", JOptionPane.INFORMATION_MESSAGE);
             }
         desenableb();
         } catch (NumberFormatException nf) {
 
-            JOptionPane.showMessageDialog(this, "Debe ingresar nros en codigo, precio y stock");
+            JOptionPane.showMessageDialog(this, "Debe ingresar nros en codigo, precio y stock.", "Opss", JOptionPane.INFORMATION_MESSAGE);
          
         }
        
@@ -320,7 +320,7 @@ public class ProductosFrame extends javax.swing.JFrame {
             }
             if(prodEncontrado==null){
         
-            JOptionPane.showMessageDialog(this, "No se encontró producto");
+            JOptionPane.showMessageDialog(this, "No se encontró el producto.", "Opss", JOptionPane.INFORMATION_MESSAGE);
         }else{
              jTextFieldDescripcion.setText(prodEncontrado.getDescripcion());
              jTextFieldPrecio.setText(prodEncontrado.getPrecio()+"");
@@ -330,7 +330,7 @@ public class ProductosFrame extends javax.swing.JFrame {
         }
         
         } catch (NumberFormatException nf) {
-            JOptionPane.showMessageDialog(this, "Usted de escribir un código");
+            JOptionPane.showMessageDialog(this, "Usted debe de escribir un código.", "Opss", JOptionPane.INFORMATION_MESSAGE);
         }
      
      
