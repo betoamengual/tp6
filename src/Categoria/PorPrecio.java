@@ -135,21 +135,26 @@ public class PorPrecio extends javax.swing.JFrame {
     private void jTextFieldMaximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldMaximoActionPerformed
         // TODO add your handling code here:
              borrarFilas();
-            double precioMin = Double.parseDouble(jTextFieldMinimo.getText());
-            double precioMax = Double.parseDouble(jTextFieldMaximo.getText());
-          //  jTablePrecio.setRowCount(0);
+           try {
+    double precioMin = Double.parseDouble(jTextFieldMinimo.getText());
+    double precioMax = Double.parseDouble(jTextFieldMaximo.getText());
 
-            for (ProductosData producto : MenuPrincipal.productoAgg) {
-                double precioProducto = producto.getPrecio();
-                 if (precioProducto >= precioMin && precioProducto <= precioMax) {
-                    tab.addRow(new Object[]{
-                            producto.getCodigo(),
-                            producto.getDescripcion(),
-                            producto.getPrecio(),
-                            producto.getStock(),
-           });
-            }
+    for (ProductosData producto : MenuPrincipal.productoAgg) {
+        double precioProducto = producto.getPrecio();
+        if (precioProducto >= precioMin && precioProducto <= precioMax) {
+            tab.addRow(new Object[]{
+                producto.getCodigo(),
+                producto.getDescripcion(),
+                producto.getPrecio(),
+                producto.getStock()
+            });
         }
+    }
+} catch (NumberFormatException e) {
+    // Manejo de la excepción
+    JOptionPane.showMessageDialog(null, "Ingresa valores numéricos válidos en los campos de texto.", "Error", JOptionPane.ERROR_MESSAGE);
+}
+
          
     }//GEN-LAST:event_jTextFieldMaximoActionPerformed
 
